@@ -1,0 +1,7 @@
+[Profile]
+name: ${Profile}
+# Disallow remote connections?
+no-remote: ${NoRemote}
+
+[FireFox]
+path: ${Application}
