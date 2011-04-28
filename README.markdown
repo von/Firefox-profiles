@@ -10,6 +10,9 @@ Usage:
 By default, creates an application named `Firefox-<profile>.app`.
 You can specify `<application-name>` to change this.
 
+The profile name `ProfileManager` is a special case that will create
+an application that launches the Firefox profile manager.
+
 To see all options:
 
 > ./make-firefox-profile.py -h

@@ -35,8 +35,12 @@ def main(argv=None):
                           "Contents/MacOS/firefox-bin")
 
     args = [binary]
-    args.append("-P")
-    args.append(config.get("Profile", "name"))
+    profile_name = config.get("Profile", "name")
+    if profile_name == "ProfileManager":
+        args.append("-ProfileManager")
+    else:
+        args.append("-P")
+        args.append(config.get("Profile", "name"))
 
     no_remote = config.getboolean("Profile", "no-remote")
     if no_remote:

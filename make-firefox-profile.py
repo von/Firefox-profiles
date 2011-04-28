@@ -57,7 +57,7 @@ def main(argv=None):
                         help="Allow profile to accept remote requests (do not specify -no-remote)")
     parser.add_argument("--version", action="version", version="%(prog)s 1.0")
     parser.add_argument("profile", metavar="profile", type=str, nargs=1,
-                        help="Profile to create")
+                        help="Profile to create. 'ProfileManage' opens profile manager.")
     parser.add_argument("app_name", metavar="app_name", type=str,
                         nargs="?", default=None,
                         help="Application name to create (default is Firefox-[profile].app")
