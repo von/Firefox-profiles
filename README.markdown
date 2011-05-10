@@ -19,3 +19,22 @@ To see all options:
 
 Note this requires you have Firefox installed as /Applications/Firefox.app
 (you can change the path with the -A option).
+
+Creating .icns files
+====================
+
+* Open OmniGraffle and drag existing icns into a new document.
+
+* Edit as you wish.
+
+* Export as png (with transparent background)
+
+* Open /Developer/Applications/Utilities/Icon Composer.app
+
+* Under File select New ICNS
+
+* Drag png into each of the different sizes
+
+* Save As... filename as you wish.
+
+Kudos: http://macapper.com/2007/04/21/how-to-create-custom-icons-for-your-mac/

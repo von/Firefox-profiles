@@ -55,6 +55,9 @@ def main(argv=None):
     parser.add_argument("-R", "-allow_remote",
                         action="store_true", dest="allow_remote", default=False,
                         help="Allow profile to accept remote requests (do not specify -no-remote)")
+    parser.add_argument("-I", "--icns", 
+                        default=None,
+                        metavar="path", help="specify .icns file to use")
     parser.add_argument("--version", action="version", version="%(prog)s 1.0")
     parser.add_argument("profile", metavar="profile", type=str, nargs=1,
                         help="Profile to create. 'ProfileManage' opens profile manager.")
@@ -68,6 +71,7 @@ def main(argv=None):
     # Figure out our parameters
     firefox_app = args.application
     profile_name = args.profile[0]
+    icns_file = args.icns
     my_path = os.path.abspath(os.path.dirname(argv[0]))
     data_path = os.path.join(my_path, "data")
     app_name = "Firefox-" + args.profile[0] + ".app" if args.app_name is None \
@@ -108,6 +112,12 @@ def main(argv=None):
     os.makedirs(resources_path)
     for file in glob.glob(icns_glob):
         shutil.copy(file, resources_path)
+
+    # Overwrite default firefox.icns if specified
+    if icns_file:
+        icns_target = os.path.join(app_name, "Contents",
+                                   "Resources", "firefox.icns")
+        shutil.copy(icns_file, icns_target)
 
     return(0)
 
