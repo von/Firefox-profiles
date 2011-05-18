@@ -75,7 +75,7 @@ def main(argv=None):
     my_path = os.path.abspath(os.path.dirname(argv[0]))
     data_path = os.path.join(my_path, "data")
     app_name = "Firefox-" + args.profile[0] + ".app" if args.app_name is None \
-        else args.app_name[0]
+        else args.app_name
     script_name = "firefox-bin"  # From Info.plist
     conf_name = "ff-profile.conf"
     macOS_path = os.path.join(app_name, "Contents", "MacOS")
